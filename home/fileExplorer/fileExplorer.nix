@@ -1,0 +1,4 @@
+{ ... }:
+{
+  imports = [ ./yazi/yazi.nix ];
+}

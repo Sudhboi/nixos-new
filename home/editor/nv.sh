@@ -1,0 +1,1 @@
+neovide --fork $1
