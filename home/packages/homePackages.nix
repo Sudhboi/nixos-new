@@ -5,6 +5,7 @@
     heroic
     vesktop
     statix
+    prismlauncher
     nixfmt
     yazi
   ];

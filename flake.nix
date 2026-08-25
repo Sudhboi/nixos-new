@@ -19,7 +19,7 @@
         inherit inputs;
       };
       hornetArgs = argsTemplate "hornet" "niri";
-      knightArgs = argsTemplate "knight" "kde";
+      knightArgs = argsTemplate "knight" "hyprland";
       makeSystem =
         args:
         nixpkgs.lib.nixosSystem {

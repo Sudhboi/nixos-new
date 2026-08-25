@@ -1,0 +1,7 @@
+{ ... }:
+
+{
+  imports = [
+    ./sync/syncScripts.nix
+  ];
+}

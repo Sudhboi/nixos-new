@@ -10,6 +10,7 @@
     ./terminalEmulator/terminalEmulator.nix
     ./browser/browser.nix
     ./fileExplorer/fileExplorer.nix
+    ./scripts/scripts.nix
     ./packages/homePackages.nix
   ];
   home = {
