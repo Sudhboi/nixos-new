@@ -6,6 +6,7 @@
     vesktop
     statix
     prismlauncher
+    btop-cuda
     nixfmt
     yazi
   ];
