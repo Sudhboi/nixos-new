@@ -7,6 +7,7 @@
     statix
     prismlauncher
     btop-cuda
+    flameshot
     nixfmt
     yazi
   ];

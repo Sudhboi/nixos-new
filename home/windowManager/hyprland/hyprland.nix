@@ -1,10 +1,14 @@
 { inputs, pkgs, ... }:
 
 {
-  imports = [ ./waybar.nix ];
+  imports = [
+    ./waybar.nix
+    ./cursor.nix
+    ./hyprpaper/hyprpaper.nix
+    ../../notifications/swaync.nix
+  ];
 
   wayland.windowManager.hyprland = {
-
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalPackage =

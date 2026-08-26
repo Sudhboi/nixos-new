@@ -2,6 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     heroic
+    fzf
     git
     python3
     wget
