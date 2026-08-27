@@ -8,6 +8,10 @@
     prismlauncher
     btop-cuda
     flameshot
+    grim
+    wl-clipboard
+    slurp
+    satty
     nixfmt
     yazi
   ];

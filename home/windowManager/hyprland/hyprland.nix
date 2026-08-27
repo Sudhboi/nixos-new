@@ -6,6 +6,7 @@
     ./cursor.nix
     ./hyprpaper/hyprpaper.nix
     ../../notifications/swaync.nix
+    ./xdg.nix
   ];
 
   wayland.windowManager.hyprland = {
