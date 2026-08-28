@@ -1,0 +1,134 @@
+@define-color background rgba(46, 52, 64, 0.98);
+@define-color text-color rgb(0, 0, 0);
+/* @define-color text-color rgb(36, 39, 58); */
+/* @define-color text-color rgb(205, 214, 244); */
+@define-color background-translucent rgba(0, 0, 0, 0);
+@define-color warn-red rgba(255, 0, 0, 1);
+
+@define-color macchiato-peach rgb(245, 169, 127);
+@define-color macchiato-red   rgb(237, 135, 150);
+@define-color macchiato-green rgb(166, 218, 149);
+@define-color macchiato-mauve rgb(198, 160, 246);
+@define-color macchiato-blue  rgb(138, 173, 244);
+@define-color macchiato-yello rgb(238, 212, 159);
+@define-color macchiato-base  rgb( 36,  39,  58);
+@define-color macchiato-text  rgb(202, 211, 245);
+
+* {
+    font-family: 'DaddyTimeMono Nerd Font';
+    /*font-size: 13px;*/
+    /*border-radius: 0px;*/
+    margin: 0px;
+    padding: 0px;
+    font-size: 0px;
+    transition: 0.2s ease-out;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0);
+    color: @text-color;
+    transition-property: background-color;
+    transition: 0s ease-in-out;
+    border-radius: 0px 0px 0px 0px;
+}
+
+window#waybar.empty {
+    /*opacity: 0.1;*/
+    background-color: @background-translucent;
+    transition-duration: 0s;
+}
+
+window#waybar.empty * {
+    font-size: 17px;
+}
+/* window#waybar.empty #cava { */
+/*     font-size: 40px; */
+/* } */
+
+window#waybar.empty #backlight,
+window#waybar.empty #battery,
+window#waybar.empty #battery.timeruntil,
+window#waybar.empty #battery.currentpower,
+window#waybar.empty #pulseaudio,
+window#waybar.empty #cpu,
+window#waybar.empty #user,
+window#waybar.empty #disk,
+window#waybar.empty #memory,
+window#waybar.empty #window, 
+window#waybar.empty #network,
+window#waybar.empty #network.essid,
+window#waybar.empty #network.ip,
+window#waybar.empty #clock.full,
+window#waybar.empty #clock { 
+    padding: 1px 16px;
+    color: @text-color;
+    font-weight: 200;
+    font-size: 14px;
+}
+
+
+#time {
+    background-color: @macchiato-peach;
+}
+
+#custom-ltriangle1 {
+	color: @macchiato-peach;
+	background: @macchiato-red;
+}
+
+#power {
+    background-color: @macchiato-red;
+}
+
+#custom-ltriangle2 {
+	color: @macchiato-red;
+	background: transparent;
+}
+
+#network {
+    background-color: @macchiato-green;
+}
+
+#custom-rtriangle1 {
+	color: @macchiato-green;
+	background: @macchiato-blue;
+}
+
+#backlight {
+    background-color: @macchiato-blue;
+}
+
+#custom-rtriangle2 {
+	color: @macchiato-blue;
+	background: @macchiato-mauve;
+}
+
+#pulseaudio {
+    background-color: @macchiato-mauve;
+}
+
+#custom-rtriangle3 {
+	color: @macchiato-mauve;
+	background: transparent;
+}
+
+#custom-ltriangle3 {
+    color: @macchiato-base;
+	background: transparent;
+}
+
+#cava {
+    background-color: transparent;
+    color: @macchiato-text;
+    padding: 0px 10px;
+}
+
+#custom-rtriangle4 {
+    color: @macchiato-base;
+	background: transparent;
+}
+
+#network.disconnected {
+    color: @warn-red;
+}
+

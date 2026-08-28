@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./waybar.nix
-    ./cursor.nix
+    ../../desktopStuff/waybar/waybar.nix
+    ../../desktopStuff/cursor/cursor.nix
     ./hyprpaper/hyprpaper.nix
     ../../notifications/swaync.nix
     ./xdg.nix

@@ -6,20 +6,21 @@
       self,
       nixpkgs,
       home-manager,
-      zen-browser,
       nix-index-database,
       ...
     }:
     let
       system = "x86_64-linux";
-      argsTemplate = host: wm: {
+      argsTemplate = host: wm: wbs: wps: {
         hostName = "${host}";
         terminalEmulator = "kitty";
         windowManager = "${wm}";
+        waybarStyle = "${wbs}";
+        wallpaperStyle = "${wps}";
         inherit inputs;
       };
-      hornetArgs = argsTemplate "hornet" "niri";
-      knightArgs = argsTemplate "knight" "hyprland";
+      hornetArgs = argsTemplate "hornet" "niri" "1" "nix-cat";
+      knightArgs = argsTemplate "knight" "hyprland" "0" "gruvbox";
       makeSystem =
         args:
         nixpkgs.lib.nixosSystem {
@@ -60,6 +61,11 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
+
+    mango = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";

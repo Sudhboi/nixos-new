@@ -1,0 +1,208 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 0,
+
+    "modules-left": [
+        "group/internet",
+        "custom/rtriangle1",
+        "backlight",
+        "custom/rtriangle2",
+        "pulseaudio",
+        "custom/rtriangle3",
+        "niri/window",
+    ],
+
+    // "modules-center": [
+    //     "cava",
+    // ],
+
+    "modules-right": [
+        "custom/ltriangle2",
+        "group/power",
+        "custom/ltriangle1",
+        "group/time"
+    ],
+
+    "group/time": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 700,
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "clock",
+            "clock#full",
+        ] 
+    },
+
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%I:%M}  ",
+        "interval": 60
+    },
+
+    "clock#full": {
+        "format": "{:%e %B, %A (%d-%m-%Y)}",
+        "interval": 3600
+    },
+
+    // "cava": {
+    //     // "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+    //     "framerate": 30,
+    //     "autosens": 0,
+    //     "sensitivity": 2.7,
+    //     "bars": 50,
+    //     "lower_cutoff_freq": 50,
+    //     "higher_cutoff_freq": 10000,
+    //     "hide_on_silence": true,
+    //     // "format_silent": " sudhirk",
+    //     "sleep_timer": 1,
+    //     "method": "pipewire",
+    //     "source": "auto",
+    //     "stereo": true,
+    //     "reverse": true,
+    //     "bar_delimiter": 0,
+    //     "monstercat": true,
+    //     "waves": true,
+    //     "noise_reduction": 0.77,
+    //     "input_delay": 2,
+    //     "format-icons": [" ", " ", "▁", "▂", "▃", "▄", "▅", "▆", ],
+    //     "actions": {
+    //                "on-click-right": "mode"
+    //                }
+    // },
+
+    "pulseaudio": {
+        "format": "{volume}% {icon} ",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+            "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "phone-muted": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol",
+        "ignored-sinks": ["Easy Effects Sink"]
+    },
+
+    "group/internet": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 700,
+            "transition-left-to-right": true,
+        },
+        "modules": [
+            "network",
+            "network#essid",
+            "network#ip"
+        ] 
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "󱚽 ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        //"tooltip-format": "{ifname} via {gwaddr} ",
+        "tooltip-format": "{essid}: {ipaddr}",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "󱛅 !󰯇 ",
+        //"format-alt": "{ifname}: {ipaddr}/{cidr}: {essid}",
+        "on-click": "kitty nmtui",
+    },
+
+    "network#essid": {
+        "format-wifi": "{essid} ({signalStrength}%)",
+    },
+
+    "network#ip": {
+        "format-wifi": "{ipaddr}",
+    },
+
+    "backlight": { "device": "intel_backlight",
+        "format": "{percent}% {icon} ",
+        "format-icons": ["", ""]
+    },
+
+    "niri/window": { 
+        "tooltip": false,
+        "format": "",
+        "on-click": "niri msg action toggle-overview",
+    },
+
+    "group/power": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "battery",
+            "battery#timeruntil",
+            "battery#currentpower",
+        ] 
+    },
+
+    "battery": {
+        "bat": "BAT0",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon} ",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 25,
+        "format-charging": "{capacity}%  ",
+        "format-plugged": "󱟢",
+    },
+
+    "battery#timeruntil": {
+        "interval": 300,
+        "format-time": "{H}h {M}m",
+        "format": "{time} ",
+        "format-plugged": "{capacity}% 󰟨 ",
+    },
+
+    "battery#currentpower": {
+        "interval": 10,
+        "format": "{power}W 󱐋",
+        "format-plugged": "",
+    },
+
+
+    "custom/ltriangle1": {
+		"format": "",
+		"tooltip": false
+	},
+
+    "custom/ltriangle2": {
+		"format": "",
+		"tooltip": false
+	},
+
+    "custom/rtriangle1": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/rtriangle2": {
+		"format": "",
+		"tooltip": false
+	},
+
+    "custom/rtriangle3": {
+		"format": "",
+		"tooltip": false
+	},
+
+}
+
