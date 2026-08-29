@@ -17,11 +17,20 @@ in
       "${sequence_path}/no_color_lock".source = ./sequenced/Wallpaper-Mocha-NocolorWithLock.png;
     };
 
-    packages = [ pkgs.awww ];
+    packages = [
+      pkgs.awww
+    ];
 
-    file.".scripts/wallpaper_poweroff".text = lib.mkForce ''
+    file.".scripts/wallpaper/wallpaper_poweroff".text = lib.mkForce ''
       awww img /home/sudhirk/.config/wallpapers/sequence/no_color_lock --transition-type outer --transition-pos 0.5,0.5 --transition-fps 120 --transition-duration 0.5
       sleep 0.5
     '';
+
   };
+
+  programs.hyprlock = {
+    enable = true;
+  };
+  home.file.".config/hypr/hyprlock.conf".source = ./hyprlock.conf;
+
 }
