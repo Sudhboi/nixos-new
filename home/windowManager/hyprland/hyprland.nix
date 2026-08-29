@@ -1,10 +1,14 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  hostName,
+  ...
+}:
 
 {
   imports = [
     ../../desktopStuff/waybar/waybar.nix
     ../../desktopStuff/cursor/cursor.nix
-    ./hyprpaper/hyprpaper.nix
     ../../notifications/swaync.nix
     ./xdg.nix
     ./hypridle.nix
@@ -19,5 +23,13 @@
     extraConfig = ''
       require("main")
     '';
+  };
+  home = {
+    file = {
+      ".config/hypr/autostarts.lua".source = ./config/autostarts.lua;
+      ".config/hypr/binds.lua".source = ./config/binds.lua;
+      ".config/hypr/main.lua".source = ./config/main.lua;
+      ".config/hypr/monitors.lua".source = ./config/monitors-${hostName}.lua;
+    };
   };
 }
