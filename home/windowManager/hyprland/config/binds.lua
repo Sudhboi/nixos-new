@@ -124,6 +124,6 @@ defn_subm("yazi", "Y", function()
 end)
 
 defn_subm("power", "P", function()
-	bind("P", "/home/sudhirk/.sync/sync_poweroff.sh < /home/sudhirk/.sync/folders.txt && poweroff")
+	bind("P", "/home/sudhirk/.scripts/poweroff.sh && poweroff")
 	bind("R", "/home/sudhirk/.sync/sync_poweroff.sh < /home/sudhirk/.sync/folders.txt && reboot")
 end)
