@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
     heroic
     fzf
+    wireplumber
     git
     python3
     wget

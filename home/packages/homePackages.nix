@@ -12,6 +12,7 @@
     wl-clipboard
     slurp
     satty
+    rustdesk-flutter
     nixfmt
     yazi
   ];
